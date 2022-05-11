@@ -36,7 +36,7 @@ class Test_reto2Cliente(unittest.TestCase):
     def test_cliente_ifAgeIsBetween15and18_andFirstAdmissionIsTrue_returnDicAptoInTrue_atraccionCarrosChocones_toTalBoletawithDiscount(self):
         #given
         cliente = makeDicCliente("Tatiana Suarez",17,True)
-        expected = {"nombre": "Tatiana Suarez", "edad": 17, "atraccion": "Carroschocones", "apto": True, "primer_ingreso": True, "total_boleta": 4650.0}   
+        expected = {"nombre": "Tatiana Suarez", "edad": 17, "atraccion": "Carros chocones", "apto": True, "primer_ingreso": True, "total_boleta": 4650.0}   
         #when
         result = Reto2_Cliente.cliente(cliente)
         #then
@@ -45,7 +45,7 @@ class Test_reto2Cliente(unittest.TestCase):
     def test_cliente_ifAgeIsBetween15and18_andFirstAdmissionIsFalse_returnDicAptoInTrue_atraccionCarrosChocones_toTalBoletawithoutDiscount(self):
         #given
         cliente = makeDicCliente("Tatiana Suarez",17,False)
-        expected = {"nombre": "Tatiana Suarez", "edad": 17, "atraccion": "Carroschocones", "apto": True, "primer_ingreso": False, "total_boleta": 5000}   
+        expected = {"nombre": "Tatiana Suarez", "edad": 17, "atraccion": "Carros chocones", "apto": True, "primer_ingreso": False, "total_boleta": 5000}   
         #when
         result = Reto2_Cliente.cliente(cliente)
         #then

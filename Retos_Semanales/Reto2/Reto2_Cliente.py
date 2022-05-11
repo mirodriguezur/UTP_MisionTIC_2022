@@ -2,7 +2,6 @@
 Reto 2
 '''
 
-from typing import Any
 
 
 def cliente(informacion: dict) -> dict:
@@ -10,9 +9,7 @@ def cliente(informacion: dict) -> dict:
     nombre = informacion["nombre"]
     edad = informacion["edad"]
     primer_ingreso = informacion["primer_ingreso"]
-    atraccion: Any
     apto = False
-    total_boleta: Any 
     
     if edad < 7:
         atraccion = "N/A"
@@ -26,11 +23,11 @@ def cliente(informacion: dict) -> dict:
         apto = True
         total_boleta = 10000
     elif (edad >= 15 and edad <= 18) and primer_ingreso == True:
-        atraccion = "Carroschocones"
+        atraccion = "Carros chocones"
         apto = True
         total_boleta = 5000 - (5000 * 0.07)
     elif (edad >= 15 and edad <= 18):
-        atraccion = "Carroschocones"
+        atraccion = "Carros chocones"
         apto = True
         total_boleta = 5000
     elif edad > 18 and primer_ingreso == True:

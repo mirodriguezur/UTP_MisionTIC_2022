@@ -11,7 +11,7 @@ class Test_reto1CDT(unittest.TestCase):
         expected = "Para el usuario " + str(user) + " La cantidad de dinero a recibir, según el monto inicial " + str(amount) + " para un tiempo de " + str(time) + " meses es: " + str(totalValue)
          
         #when
-        result = Reto1_CDT.cdt(user,amount,time)
+        result = Reto1_CDT.CDT(user,amount,time)
         
         #then
         self.assertEqual(expected, result)
@@ -25,7 +25,7 @@ class Test_reto1CDT(unittest.TestCase):
          
         #when --- then
         for i in range (len(time)):
-            result = Reto1_CDT.cdt(user,amount,time[i])
+            result = Reto1_CDT.CDT(user,amount,time[i])
             expected = "Para el usuario " + str(user) + " La cantidad de dinero a recibir, según el monto inicial " + str(amount) + " para un tiempo de " + str(time[i]) + " meses es: " + str(totalValue[i])
             self.assertEqual(expected, result)     
      
