@@ -25,4 +25,24 @@ print(consultaRegistro(AutoPartes([(2001, 'rosca', 'PT29872', 2, 45, 'Luis Moler
             (9251, 'piñón', 'EN5698', 2, 8, 'Juan Peña', 565, '12/06/2020')]), 2010))           
 ''' 
         
-        
+'''
+Respuesta para el juez:
+def AutoPartes(ventas: list):
+    ventasCliente = {}
+    
+    for IdProducto, dProducto, pnProducto, cvProducto, sProducto, nComprador, cComprador, fVenta in ventas:
+        if ventasCliente.get(IdProducto) == None:
+            ventasCliente[IdProducto] = []
+        ventasCliente[IdProducto].append((dProducto, pnProducto, cvProducto, sProducto, nComprador, cComprador, fVenta))
+    return ventasCliente
+
+def consultaRegistro(ventas: dict, IdProducto: int):
+    result: str = ""
+    if IdProducto not in ventas:
+        print("No hay registro de venta de ese producto")
+    else:
+        for i in range(len(ventas[IdProducto])):
+            result += f'Producto consultado : {IdProducto}  Descripción  {ventas[IdProducto][i][0]}  #Parte  {ventas[IdProducto][i][1]}  Cantidad vendida  {ventas[IdProducto][i][2]}  Stock  {ventas[IdProducto][i][3]}  Comprador {ventas[IdProducto][i][4]}  Documento  {ventas[IdProducto][i][5]}  Fecha Venta  {ventas[IdProducto][i][6]}\n'
+    print(result.rstrip('\n'))
+
+'''        
