@@ -1,5 +1,5 @@
 from functools import reduce
-
+'''
 def ordenes(rutinaContable):
     print('------------------------ Inicio Registro diario ---------------------------------')
     facturas = []
@@ -19,6 +19,18 @@ def ordenes(rutinaContable):
         textResult += f'La factura {facturas[i]} tiene un total en pesos de {resultado[i]:,.2f}\n'
     
     print(textResult.rstrip('\n'))
+    print('-------------------------- Fin Registro diario ----------------------------------')
+    '''
+    #Forma optimizada de nelson
+    
+def ordenes(rutinaContable: list) -> str:
+    print('------------------------ Inicio Registro diario ---------------------------------')
+    for lista_registro in rutinaContable:
+        numero = lista_registro[0]
+        cantidad = reduce(lambda a, b: a + b, map(lambda x: reduce(lambda a, b: a * b, x[1:]), lista_registro[1:]))
+        if cantidad < 600000:
+            cantidad = cantidad + 25000
+        print("La factura {} tiene un total en pesos de {:,.2f}".format(numero, cantidad))         
     print('-------------------------- Fin Registro diario ----------------------------------')
     
 ordenes([[1201, ("5464", 4, 25842.99), ("7854",18,23254.99), ("8521", 9, 48951.95)], 
