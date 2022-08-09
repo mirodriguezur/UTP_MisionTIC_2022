@@ -1,17 +1,11 @@
 package co.edu.utp.minsiontic2022.c2.reto4;
 
-/**
- * Hello world!
- */
-public final class App {
-    private App() {
-    }
+import co.edu.utp.minsiontic2022.c2.reto4.view.ReportesView;
 
-    /**
-     * Says hello to the world.
-     * @param args The arguments of the program.
-     */
+public final class App {
     public static void main(String[] args) {
-        System.out.println("Hello World!");
+        var reportesView = new ReportesView();
+        var banco = "Conavi";
+        reportesView.proyectosFinanciadosPorBanco(banco);
     }
 }

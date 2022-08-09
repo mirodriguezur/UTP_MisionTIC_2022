@@ -1,6 +1,16 @@
 package co.edu.utp.minsiontic2022.c2.reto4.view;
 
+import java.sql.SQLException;
+
+import co.edu.utp.minsiontic2022.c2.reto4.controller.ReportesController;
+
 public class ReportesView {
+    private ReportesController reportesController;
+
+    public ReportesView() {
+        this.reportesController = new ReportesController();
+    }
+
     private String repitaCaracter(Character caracter, Integer veces) {
         String respuesta = "";
         for (int i = 0; i < veces; i++) {
@@ -17,6 +27,19 @@ public class ReportesView {
                     "ID", "CONSTRUCTORA", "CIUDAD", "CLASIFICACION", "ESTRATO", "LIDER"));
             System.out.println(repitaCaracter('-', 105));
             // TODO Imprimir en pantalla la información del proyecto
+            try {
+                var reportes = reportesController.listarInfoProyectosPorBanco(banco);
+                reportes.forEach(reporte -> System.out.println(String.format("%3d %-25s %-20s %-15s %7d %-30s", 
+                                                                            reporte.getId(), 
+                                                                            reporte.getConstructora(), 
+                                                                            reporte.getCiudad(), 
+                                                                            reporte.getClasificacion(), 
+                                                                            reporte.getEstrato(), 
+                                                                            reporte.getLider())));
+            } catch (SQLException e) {
+                System.err.println("Ha ocurrido un error: " + e.getMessage());
+            }
+            
         } 
     }
 
