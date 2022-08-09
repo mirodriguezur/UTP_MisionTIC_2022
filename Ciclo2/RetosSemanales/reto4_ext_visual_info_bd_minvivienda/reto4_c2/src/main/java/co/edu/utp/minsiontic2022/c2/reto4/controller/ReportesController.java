@@ -11,7 +11,6 @@ import co.edu.utp.minsiontic2022.c2.reto4.model.vo.DeudasPorProyectoVo;
 import co.edu.utp.minsiontic2022.c2.reto4.model.vo.ProyectoBancoVo;
 
 public class ReportesController {
-    //TODO Implementar la clase
     private final ProyectoBancoDao proyectoBancoDao;
     private final DeudasPorProyectoDao deudasPorProyectoDao;
     private final ComprasDeLiderDao comprasDeLiderDao;
@@ -23,19 +22,14 @@ public class ReportesController {
     }
 
     public List<ProyectoBancoVo> listarInfoProyectosPorBanco(String banco) throws SQLException{
-        var result = proyectoBancoDao.infoProyectosPorBanco(banco);
-        return result;
+        return proyectoBancoDao.infoProyectosPorBanco(banco);
     }
 
     public List<DeudasPorProyectoVo> listarInfoDeudasPorProyecto(Double limiteInferior) throws SQLException{
-        var result = deudasPorProyectoDao.infoDeudasPorProyecto(limiteInferior);
-        return result;
+        return  deudasPorProyectoDao.infoDeudasPorProyecto(limiteInferior);
     }
 
     public List<ComprasDeLiderVo> listarComprasDeLider() throws SQLException{
-        var result = comprasDeLiderDao.infoComprasLider();
-        return result;
+        return  comprasDeLiderDao.infoComprasLider();
     }
-
-
 }

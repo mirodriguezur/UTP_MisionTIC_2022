@@ -61,7 +61,7 @@ public class ReportesView {
     }
         
     public void lideresQueMasGastan() {
-        System.out.println(repitaCaracter('-', 6) + "10 LIDERES MAS COMPRADORES " 
+        System.out.println(repitaCaracter('=', 6) + " 10 LIDERES MAS COMPRADORES " 
                 + repitaCaracter('=', 7));
         System.out.println(String.format("%-25s %15s", "LIDER", "VALOR  "));
         System.out.println(repitaCaracter('-', 41));
