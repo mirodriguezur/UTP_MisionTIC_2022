@@ -65,6 +65,14 @@ public class ReportesView {
                 + repitaCaracter('=', 7));
         System.out.println(String.format("%-25s %15s", "LIDER", "VALOR  "));
         System.out.println(repitaCaracter('-', 41));
-        // TODO Imprimir en pantalla la información de los líderes
+        try {
+            var listadoComprasDeLider = reportesController.listarComprasDeLider();
+            listadoComprasDeLider.forEach(compra -> System.out.println(String.format("%-25s %,15.1f", 
+                                                                                    compra.getLider(), 
+                                                                                    compra.getValor())));
+        } catch (SQLException e) {
+            System.err.println("Ha ocurrido un error: " + e.getMessage());
+        }
+        
     }
 }

@@ -11,8 +11,13 @@ public final class App {
         reportesView.proyectosFinanciadosPorBanco(banco);
         */
         // Desbloquear para probar segundo enunciado.
+        /*
         var reportesView = new ReportesView();
         var limiteInferior = 50_000d; 
         reportesView.totalAdeudadoPorProyectosSuperioresALimite(limiteInferior);
+        */
+        // Desbloquear para probar tercer enunciado.
+        var reportesView = new ReportesView(); 
+        reportesView. lideresQueMasGastan();
     }
 }
