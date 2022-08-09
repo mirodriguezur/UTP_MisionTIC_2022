@@ -26,7 +26,6 @@ public class ReportesView {
             System.out.println(String.format("%3s %-25s %-20s %-15s %-7s %-30s",
                     "ID", "CONSTRUCTORA", "CIUDAD", "CLASIFICACION", "ESTRATO", "LIDER"));
             System.out.println(repitaCaracter('-', 105));
-            // TODO Imprimir en pantalla la información del proyecto
             try {
                 var reportes = reportesController.listarInfoProyectosPorBanco(banco);
                 reportes.forEach(reporte -> System.out.println(String.format("%3d %-25s %-20s %-15s %7d %-30s", 
@@ -49,7 +48,15 @@ public class ReportesView {
         if (limiteInferior != null) {
             System.out.println(String.format("%3s %15s", "ID", "VALOR  "));
             System.out.println(repitaCaracter('-', 29));
-            // TODO Imprimir en pantalla la información del total adeudado
+            try {
+                var listadoDeudas = reportesController.listarInfoDeudasPorProyecto(limiteInferior);
+                listadoDeudas.forEach(deuda -> System.out.println(String.format("%3d %,15.1f", 
+                                                                                deuda.getId(), 
+                                                                                deuda.getValor())));      
+            } catch (SQLException e) {
+                System.err.println("Ha ocurrido un error: " + e.getMessage());
+            }
+            
         } 
     }
         
