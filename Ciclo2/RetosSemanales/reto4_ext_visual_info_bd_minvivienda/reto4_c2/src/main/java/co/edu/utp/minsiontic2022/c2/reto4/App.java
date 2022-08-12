@@ -5,11 +5,11 @@ import co.edu.utp.minsiontic2022.c2.reto4.view.ReportesView;
 public final class App {
     public static void main(String[] args) {
         // Desbloquear para probar primer enunciado.
-        /* 
+         
         var reportesView = new ReportesView();
         var banco = "Conavi";
         reportesView.proyectosFinanciadosPorBanco(banco);
-        */
+        
         // Desbloquear para probar segundo enunciado.
         /*
         var reportesView = new ReportesView();
@@ -17,7 +17,9 @@ public final class App {
         reportesView.totalAdeudadoPorProyectosSuperioresALimite(limiteInferior);
         */
         // Desbloquear para probar tercer enunciado.
+        /*
         var reportesView = new ReportesView(); 
         reportesView. lideresQueMasGastan();
+        */
     }
 }
